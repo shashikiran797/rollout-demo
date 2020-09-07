@@ -5,6 +5,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/security-groups: iks-intuit-cidr-ingress-tcp-443, iks-intuit-api-gw-ingress-prod-tcp-443,
+      iks-intuit-app-alb-custom-ingress, iks-intuit-ibp-ingress-tcp-443
+    external-dns.alpha.kubernetes.io/hostname: rollout-alb-test.ppd-west-2.iks.a.intuit.com
     alb.ingress.kubernetes.io/actions.rollouts-demo-stable: |
       {
         "Type":"forward",
