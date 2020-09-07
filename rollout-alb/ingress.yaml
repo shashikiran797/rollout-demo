@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: rollouts-demo-ingress
   annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
     kubernetes.io/ingress.class: aws-alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/security-groups: iks-intuit-cidr-ingress-tcp-443, iks-intuit-app-alb-custom-ingress, iks-intuit-ibp-ingress-tcp-443
