@@ -7,7 +7,7 @@ metadata:
   name: rollout-canary-preview
 spec:
   replicas: 3
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: rollout-canary-production
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo:yellow
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
