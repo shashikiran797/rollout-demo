@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deploymentee
+kind: Deployment
 metadata:
   name: deployment-demo
   namespace: deploymentdemo
