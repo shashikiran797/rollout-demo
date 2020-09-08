@@ -4,7 +4,7 @@ metadata:
   name: deployment-demo
   namespace: deploymentdemo
 spec:
-  replicas: 3
+  replicas: 5
   revisionHistoryLimit: 10
   selector:
     matchLabels:
