@@ -16,6 +16,9 @@ spec:
       - pause: {duration: 60}
       - setWeight: 80
       - pause: {duration: 60}
+    trafficRouting:
+      nginx:
+        stableIngress: rollouts-demo-stable
   revisionHistoryLimit: 10
   selector:
     matchLabels:
