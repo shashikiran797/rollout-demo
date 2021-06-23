@@ -15,3 +15,5 @@ spec:
       - backend:
           serviceName: rollouts-demo
           servicePort: 80
+        path: /
+        pathType: Prefix
