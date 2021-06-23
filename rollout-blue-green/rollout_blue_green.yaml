@@ -65,7 +65,7 @@ spec:
     port: 80
     targetPort: 8080
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: rollout-bluegreen
@@ -76,23 +76,9 @@ spec:
   - http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          # Reference to a Service name, also specified in the Rollout spec.strategy.canary.stableService field
-          serviceName: rollout-bluegreen-active
-          servicePort: 80
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: rollout-bluegreen-preview
-  annotations:
-    kubernetes.io/ingress.class: nginx
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /preview
-        backend:
-          # Reference to a Service name, also specified in the Rollout spec.strategy.canary.stableService field
-          serviceName: rollout-bluegreen-preview
-          servicePort: 80
+          service:
+            name: rollout-bluegreen-active
+            port:
+              number: 80
