@@ -6,6 +6,8 @@ spec:
   replicas: 5
   strategy:
     canary:
+      canaryService: rollouts-demo-canary
+      stableService: rollouts-demo
       trafficRouting:
         nginx:
           stableIngress: rollouts-demo-stable
