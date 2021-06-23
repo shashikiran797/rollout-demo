@@ -79,6 +79,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: rollout-bluegreen-active
+            name: rollout-bluegreen-preview
             port:
               number: 80
