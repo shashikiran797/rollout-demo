@@ -10,7 +10,7 @@ spec:
       stableService: rollouts-demo
       trafficRouting:
         nginx:
-          stableIngress: rollouts-demo-stable
+          stableIngress: rollout-canary-ingress
       steps:
       - setWeight: 20
       - pause: {}
