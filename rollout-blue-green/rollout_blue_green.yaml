@@ -82,3 +82,21 @@ spec:
             name: rollout-bluegreen-active
             port:
               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rollout-bluegreen-preview
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /preview
+        pathType: Prefix
+        backend:
+          service:
+            name: rollout-bluegreen-preview
+            port:
+              number: 80
