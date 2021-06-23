@@ -6,6 +6,9 @@ spec:
   replicas: 5
   strategy:
     canary:
+      trafficRouting:
+        nginx:
+          stableIngress: rollouts-demo-stable
       steps:
       - setWeight: 20
       - pause: {}
@@ -15,9 +18,6 @@ spec:
       - pause: {duration: 60}
       - setWeight: 80
       - pause: {duration: 60}
-      trafficRouting:
-        nginx:
-          stableIngress: rollouts-demo-stable
   revisionHistoryLimit: 10
   selector:
     matchLabels:
