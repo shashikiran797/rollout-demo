@@ -41,7 +41,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
-  namespace: rollout-bluegreen
 spec:
   selector:
     app: rollout-bluegreen
@@ -55,7 +54,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
-  namespace: rollout-bluegreen
 spec:
   selector:
     app: rollout-bluegreen
